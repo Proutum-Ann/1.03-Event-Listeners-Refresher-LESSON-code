@@ -77,3 +77,12 @@ document.getElementById('btnClear').addEventListener('click', () => {
    - On focus: add a border/shadow class to the input
    - On blur: remove those classes and make sure #out shows the right message
 ================================================== */
+
+window.addEventListener('scroll', () => {
+   const progBar = document.getElementById('progBar')
+
+   const scrollTop = document.body.scrollTop
+   const currentProg = document.documentElement.scrollHeight - document.documentElement.clientHeight
+
+   progBar.style.width = (scrollTop / currentProg) * 100 + '%'
+})

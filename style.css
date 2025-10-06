@@ -87,3 +87,11 @@ header{
   text-align:center;
   margin-top:.25rem;
 }
+
+.progress {
+  transition: 1s;
+}
+
+.progress:hover {
+  height: 10px!important
+}
