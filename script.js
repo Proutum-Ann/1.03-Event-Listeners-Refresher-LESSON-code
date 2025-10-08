@@ -42,7 +42,58 @@ document.addEventListener('keydown', e => {
    Demo 4: Show Time (12-hour format + day)
 ----------------------------------------- */
 document.getElementById('btnTime').addEventListener('click', () => {
+   var hour = new Date().getHours()
+   var min = new Date().getMinutes()
+   var sec = new Date().getSeconds()
+   var month = new Date().getMonth() + 1
+   var day = new Date().getDate()
+   var year = new Date().getFullYear()
 
+   let monthName = ' '
+
+   const getMonth = (month) => {
+      if (month === 1) {
+         monthName = 'January'
+      } else if (month === 2) {
+         monthName = 'February'
+      } else if (month === 3) {
+         monthName = 'March'
+      } else if (month === 4) {
+         monthName = 'April'
+      } else if (month === 5) {
+         monthName = 'May'
+      } else if (month === 6) {
+         monthName = 'June'
+      } else if (month === 7) {
+         monthName = 'July'
+      } else if (month === 8) {
+         monthName = 'August'
+      } else if (month === 9) {
+         monthName = 'September'
+      } else if (month === 10) {
+         monthName = 'October'
+      } else if (month === 11) {
+         monthName = 'November'
+      } else if (month === 12) {
+         monthName = 'December'
+      }
+   }
+
+   console.log(getMonth(month))
+
+   var dateNow = [monthName] + ' ' + [day] + ', ' + [year]
+
+   let msg = ''
+
+   if(hour < 12) {
+      msg = "Top o' the morning to ya!"
+   } else if (12 < hour < 18) {
+      msg = "Good Afternoon!"
+   } else {
+      msg = 'Good Evening.'
+   }
+
+   render(`<p>${msg} It is currently ${hour}:${min}:${sec} on ${dateNow}</p>`)
 })
 
 /* -------------------------
