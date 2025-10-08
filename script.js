@@ -81,7 +81,7 @@ document.getElementById('btnClear').addEventListener('click', () => {
 window.addEventListener('scroll', () => {
    const progBar = document.getElementById('progBar')
 
-   const scrollTop = document.body.scrollTop
+   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
    const currentProg = document.documentElement.scrollHeight - document.documentElement.clientHeight
 
    progBar.style.width = (scrollTop / currentProg) * 100 + '%'

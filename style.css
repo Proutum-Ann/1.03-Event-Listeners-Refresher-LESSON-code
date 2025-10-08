@@ -90,8 +90,17 @@ header{
 
 .progress {
   transition: 1s;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  background-color: rgba(0,0,0,0);
 }
 
 .progress:hover {
   height: 10px!important
+}
+
+.progress-bar {
+  background-color: var(--bs-success);
 }
